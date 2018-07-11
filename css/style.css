@@ -1,0 +1,90 @@
+body
+{
+    font-family: 'Lato', sans-serif;
+    background-color: white;
+    margin: 0px;
+}
+
+header 
+{
+    background-color: #ff0000;
+    width: calc(100% - 50px);
+    height: 65px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 25px;
+}
+
+#logo
+{
+    color: white;
+    font-size: 1.5em;
+}
+
+nav
+{
+    height: 100%;
+    display: flex;
+
+}
+
+nav > a
+{
+    text-decoration: none;
+    font-size: 1.1em;
+    color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+nav > a:hover:not(.active)
+{
+    color: black;
+}
+
+.landing
+{
+    background-size: cover;
+    background-image: url("../bilder/circuitboard.jpg");
+    height: 350px;
+    position: relative;
+}
+
+.overlay
+{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.46);
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.active
+{
+    font-weight: bold;
+    color: white;
+    border-bottom: 5px solid white;
+    box-sizing: border-box;
+    border-top: 5px solid transparent; 
+}
+
+#landing-title
+{
+    font-size: 50px;
+    margin: 0px;
+}
+
+#landing-description
+{
+    font-size: 30px;
+}
