@@ -129,24 +129,49 @@ nav > a:hover:not(.active)
     justify-content: space-between;
 }
 
-aside
+#content-sidebar
 {
     position: sticky;
     width: 275px;   
     height: 300px;
-    background-color: #efefef;
+    background-color: #00000008;
     padding: 15px;
     top: 25px;
     margin-top: 25px; 
     border: 1px solid #d2d2d2;
     border-radius: 5px;
+    border-left: 4px solid red;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
 
+#content-sidebar > h3
+{
+    margin: 0px;
+}
+
+#content-sidebar-list > li li
+{
+    margin: 7px 0;
+
+}
+
+ul > li::marker
+{
+    color: red;
+}
+
+/* Påverkar alla a-taggar i li (även för underrubriker som ligger i ännu en lista) */
+#content-sidebar-list > li a 
+{
+    text-decoration: none;
+    color: black;
 }
 
 #design-text
 {
-  flex: 1;
-  margin-right: 25px;  
+    flex: 1;
+    margin-right: 25px;  
 }
 
 .btn
@@ -162,6 +187,14 @@ aside
     text-decoration: none;
     color: white;
     font-weight: bold; 
+}
+
+figure
+{
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
 }
 
 /* TODO 

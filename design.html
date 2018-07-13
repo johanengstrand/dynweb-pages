@@ -35,9 +35,9 @@
                 <div id="design-text">
                     <section>
                         <!-- detta är oklart section??? Fredrik verkar inte kunna sina grejer -->
-                        <h1>Preliminary design</h1>
+                        <h2 id="preliminary-design">Preliminary design</h2>
                         <section>
-                            <h3>Triangle wave generator</h3>
+                            <h3 id="triangle-wave-generator">Triangle wave generator</h3>
                             <p>
                                 The triangle wave generator shown in figure 7 utilizes two op-amps, one functioning as a non-inverting Schmitt trigger (U1)
                                 and the other as an integrator (U2). A Schmitt trigger is essentially a comparator with hysteresis;
@@ -46,6 +46,10 @@
                                 as the input voltage. The Schmitt trigger will output a square wave, which the integrator
                                 converts to a triangle wave.
                             </p>
+                            <figure>
+                                <img src="./images/trianglegen.png" alt="A two op-amp triangle wave generator." height=300>
+                                <figcaption>The two op-amp triangle wave generator.</figcaption>
+                            </figure>
                             <p>
                                 The circuit is able to self-oscillate since the output of the Schmitt trigger must be either low or high when the circuit
                                 is powered on; when it is high, the integrator will output a falling ramp and for a low Schmitt
@@ -58,7 +62,7 @@
                             </p>
                         </section>
                         <section>
-                            <h3>Comparator</h3>
+                            <h3 id="comparator">Comparator</h3>
                             <p>
                                 The design of the comparator (fig. 8) was found in [3]. MOSFETs were substituted for BJTs, mostly due to material cost. A
                                 tail current for the comparator is generated in the current mirror comprised of Q9, Q10 and
@@ -74,7 +78,7 @@
                             </p>
                         </section>
                         <section>
-                            <h3>Dead time generator</h3>
+                            <h3 id="dead-time-generator">Dead time generator</h3>
                             <p>
                                 The dead time generator in fig. 11 was implemented with a series of logic gates, a design found in [3]. The propagation delay
                                 of the inverters is exploited to create dead time. The dead time created needs to be large
@@ -86,7 +90,7 @@
                             <!-- image -->
                         </section>
                         <section>
-                            <h3>Level shifter and MOSFET drivers</h3>
+                            <h3 id="level-shifter-mosfet">Level shifter and MOSFET drivers</h3>
                             <p>
                                 To level shift the PWM a simple inverting BJT-based shifter (fig. 12) was constructed. It consists of three resistors and
                                 an NPN transistor. When the PWM is applied to the base of the NPN the logic high level of
@@ -105,7 +109,7 @@
                             <!-- image -->
                         </section>
                         <section>
-                            <h3>Switching stage</h3>
+                            <h3 id="switching-stage">Switching stage</h3>
                             <p>
                                 In fig. 14 the switching stage is shown. Freewheeling diodes were implemented to avoid current spikes when a MOSFET turns
                                 off due to the inductive load.
@@ -113,7 +117,7 @@
                             <!-- iomg -->
                         </section>
                         <section>
-                            <h3>Low-pass filter and load</h3>
+                            <h3 id="low-pass-filter-load">Low-pass filter and load</h3>
                             <p>
                                 A fourth order Butterworth low-pass filter, shown in fig. 15, was chosen. A filter of lesser order can be used, but the roll-off
                                 will be slower, making it harder to filter out the triangle wave frequency component. A capacitor
@@ -123,7 +127,7 @@
                         </section>
                     </section>
                     <section>
-                        <h2>Final design</h2>
+                        <h2 id="final-design">Final design</h2>
                         <p>
                             It was found that the comparator was very sensitive to offsets in the triangle wave. Even small offsets (100 􀀀 200 mV) caused
                             the transistors in the comparator to slowly heat up and draw more current, in some cases destroying
@@ -179,8 +183,36 @@
                         </p>
                     </section>
                 </div>
-                <aside>
-                    blabla bobo jkfhasklfhadlfhadökjfah
+                <aside id="content-sidebar">
+                    <h3>Contents</h3>
+                    <ul id="content-sidebar-list">
+                        <li>
+                            <a href="#preliminary-design" class="content-section">Preliminary design</a>
+                            <ul>
+                                <li>
+                                    <a href="#triangle-wave-generator">Triangle wave generator</a>
+                                </li>
+                                <li>
+                                    <a href="#comparator">Comparator</a>
+                                </li>
+                                <li>
+                                    <a href="#dead-time-generator">Dead time generator</a>
+                                </li>
+                                <li>
+                                    <a href="#level-shifter-mosfet">Level shifter and MOSFET drivers</a>
+                                </li>
+                                <li>
+                                    <a href="#switching-stage">Switching stage</a>
+                                </li>
+                                <li>
+                                    <a href="#low-pass-filter-load">Low-pass filter and load</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#final-design" class="content-section">Final design</a>
+                        </li>
+                    </ul>
                 </aside>
             </div>
         </div>
