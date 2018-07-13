@@ -10,10 +10,6 @@ header
     background-color: #ff0000;
     width: calc(100% - 50px);
     height: 65px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
     padding: 0px 25px;
 }
 
@@ -21,6 +17,8 @@ header
 {
     color: white;
     font-size: 1.5em;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 nav
@@ -42,33 +40,6 @@ nav > a
     padding: 0px 10px;
 }
 
-nav > a:hover:not(.active)
-{
-    color: black;
-}
-
-.landing
-{
-    background-size: cover;
-    background-image: url("../bilder/circuitboard.jpg");
-    height: 350px;
-    position: relative;
-}
-
-.overlay
-{
-    position: absolute;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.46);
-    color: white;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
-
 .active
 {
     font-weight: bold;
@@ -76,6 +47,21 @@ nav > a:hover:not(.active)
     border-bottom: 5px solid white;
     box-sizing: border-box;
     border-top: 5px solid transparent; 
+}
+
+/* Gör så navigeringslänkar blir svarta när 
+   man har musen över dem (ej för den aktiva sidan)  */
+nav > a:hover:not(.active) 
+{
+    color: black;
+}
+
+.landing
+{
+    height: 350px;
+    flex-direction: column;  
+    align-items: center; 
+    justify-content: center;
 }
 
 #landing-title
@@ -88,3 +74,104 @@ nav > a:hover:not(.active)
 {
     font-size: 30px;
 }
+
+.content-area
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.container
+{
+    max-width: 1300px;
+    width: 100%;
+    padding: 10px 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-container
+{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0px;
+}
+
+.top-area
+{
+    background-color: #2a2e42;
+    color: white;
+    display: flex;
+    padding: 7px 0px;
+    align-items: center;
+}
+
+.top-area-title
+{
+    margin: 0px;
+    font-size: 1.4rem;
+    font-weight: normal;
+    align-self: center;
+}
+
+.row
+{
+    flex-direction: row;
+    position: relative;
+}
+
+.space-between
+{
+    justify-content: space-between;
+}
+
+aside
+{
+    position: sticky;
+    width: 275px;   
+    height: 300px;
+    background-color: #efefef;
+    padding: 15px;
+    top: 25px;
+    margin-top: 25px; 
+    border: 1px solid #d2d2d2;
+    border-radius: 5px;
+
+}
+
+#design-text
+{
+  flex: 1;
+  margin-right: 25px;  
+}
+
+.btn
+{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: 35px;
+    background-color: #666d8c;
+    border-radius: 5px;
+    align-items: center;
+    padding: 0px 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold; 
+}
+
+/* TODO 
+styla lista (med komponenter?) F2
+figurer?
+grid?
+footer borde fixas
+mer effektiv CSS? få in det som står i matrisen, F4
+F5 7:30???
+F6  slutet, borde ha nåt liknande
+kolla så all html är som den ska
+*/
+
