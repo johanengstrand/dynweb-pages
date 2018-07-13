@@ -89,6 +89,7 @@ main
     flex-direction: column;
     align-items: center;
     height: 100%;
+    padding: 0 25px;
 }
 
 .container
@@ -98,7 +99,7 @@ main
     padding: 10px 25px;
     display: flex;
     flex-direction: column;
-    margin: 0px 25px;
+  
 }
 
 .header-container
@@ -115,7 +116,7 @@ main
     background-color: #2a2e42;
     color: white;
     display: flex;
-    padding: 7px 0px;
+    padding: 7px 25px;
     align-items: center;
 }
 
