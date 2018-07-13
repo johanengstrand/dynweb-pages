@@ -3,14 +3,16 @@ body
     font-family: 'Lato', sans-serif;
     background-color: white;
     margin: 0px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header 
 {
     background-color: #ff0000;
-    width: calc(100% - 50px);
+    width: 100%;
     height: 65px;
-    padding: 0px 25px;
 }
 
 #logo
@@ -38,6 +40,7 @@ nav > a
     flex-direction: row;
     align-items: center;
     padding: 0px 10px;
+    font-weight: bold;
 }
 
 .active
@@ -53,7 +56,12 @@ nav > a
    man har musen över dem (ej för den aktiva sidan)  */
 nav > a:hover:not(.active) 
 {
-    color: black;
+    color: #710000;
+}
+
+main
+{
+    flex: 1;
 }
 
 .landing
@@ -90,6 +98,7 @@ nav > a:hover:not(.active)
     padding: 10px 25px;
     display: flex;
     flex-direction: column;
+    margin: 0px 25px;
 }
 
 .header-container
@@ -132,9 +141,9 @@ nav > a:hover:not(.active)
 #content-sidebar
 {
     position: sticky;
-    width: 275px;   
+    width: 300px;   
     height: 300px;
-    background-color: #00000008;
+    background-color: rgba(0, 0, 0, 0.03);
     padding: 15px;
     top: 25px;
     margin-top: 25px; 
@@ -150,15 +159,15 @@ nav > a:hover:not(.active)
     margin: 0px;
 }
 
-#content-sidebar-list > li li
+#content-sidebar-list
 {
-    margin: 7px 0;
-
+    padding: 0px;
 }
 
-ul > li::marker
+/* Större mellanrum mellan sakerna i innehållsförteckningen */
+#content-sidebar-list > li li
 {
-    color: red;
+    margin: 13px 0;
 }
 
 /* Påverkar alla a-taggar i li (även för underrubriker som ligger i ännu en lista) */
@@ -168,10 +177,28 @@ ul > li::marker
     color: black;
 }
 
+li
+{
+    list-style: none;
+}
+
+
+/* Ändra markers för list items */
+li > a::before
+{
+    content: '';
+    width: 7px;
+    height: 7px;
+    background-color: #2a2e42;
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
 #design-text
 {
     flex: 1;
-    margin-right: 25px;  
+    margin-right: 50px; 
 }
 
 .btn
@@ -195,6 +222,33 @@ figure
     flex-direction: column; 
     justify-content: center;
     align-items: center;
+    counter-increment: figures; /* Räkna figurnumrering från 1, se nedan */
+    margin-top: 35px;
+}
+
+figcaption
+{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+/* Lägg till figurnumrering automatiskt framför varje figcaption */
+figure figcaption:before 
+{
+	content: 'Figure ' counter(figures) '. ';
+}
+
+footer
+{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ececec; 
+    padding: 10px 0px;
+    color: #808080;
 }
 
 /* TODO 
