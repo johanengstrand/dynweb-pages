@@ -231,6 +231,7 @@ main
     margin-right: 25px;
 }
 
+/* Sidebaren i design som följer med när man rullar */
 #content-sidebar
 {
     position: sticky;
@@ -301,6 +302,7 @@ li > a::before
     margin-right: 50px; 
 }
 
+/* Styla knappen som länkar till den fulla uppsatsen samt submit på About  */
 .btn
 {
     display: flex;
@@ -397,7 +399,7 @@ textarea
 {
     margin-top: 25px;
     margin-right: 100px;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
 }
 
 #btn-submit
@@ -416,6 +418,7 @@ footer
     color: #808080;
 }
 
+/* När skärmen blir mindre än 1130px måste Contents-sidebaren flyttas till toppen och stanna där, bland annat. */
 @media (max-width: 1130px)
 { 
     .break-row
@@ -439,6 +442,7 @@ footer
     }
 }
 
+/* För ex. mobiler måste vissa saker flytta på sig och förminskas/förstoras en aning */
 @media (max-width: 650px)
 {
     header
@@ -475,7 +479,7 @@ footer
         margin-bottom: 15px;
     }
 
-    form
+    form > p
     {
         width: 100%;
     }
@@ -490,14 +494,4 @@ footer
         font-size: 1.4rem;
     }
 }
-
-
-
-
-/* TODO 
-mer effektiv CSS? få in det som står i matrisen, F4
-F5 7:30???
-F6  slutet, borde ha nåt liknande
-kolla så all html är som den ska
-*/
 
