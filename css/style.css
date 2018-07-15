@@ -54,12 +54,12 @@ h1, h2, h3, h4
     font-weight: bold;
     margin-bottom: 15px;
     margin-top: 25px;
+    color: inherit;
 }
 
 h1
 {
-    font-size: 1.5rem;
-    
+    font-size: 1.5rem; 
 }
 
 h2
@@ -83,7 +83,8 @@ p
 body
 {
     font-family: 'Lato', sans-serif;
-    background-color: #ff0000;
+    background-color: #ededed;
+    color: #333;
     margin: 0px;
     min-height: 100vh;
     display: flex;
@@ -93,7 +94,7 @@ body
 
 header 
 {
-    background-color: #ff0000;
+    background-color: #ff4040;
     width: 100%;
     height: 65px;
 }
@@ -129,9 +130,9 @@ nav > a
 {
     font-weight: bold;
     color: white;
-    border-bottom: 5px solid white;
+    border-bottom: 3px solid white;
     box-sizing: border-box;
-    border-top: 5px solid transparent; 
+    border-top: 3px solid transparent; 
 }
 
 /* Gör så navigeringslänkar blir svarta när 
@@ -150,7 +151,7 @@ main
 
 #landing-title
 {
-    font-size: 50px;
+    font-size: 2.5rem;
     margin: 0px;
 }
 
@@ -193,7 +194,7 @@ main
     display: flex;
     padding: 0px 25px;
     align-items: center;
-    height: 70px;
+    height: 60px;
     justify-content: center;
 }
 
@@ -207,7 +208,7 @@ main
 
 .landing
 {
-    height: 350px;
+    height: 250px;
     flex-direction: column;  
     align-items: center; 
     justify-content: center;
@@ -241,7 +242,7 @@ main
     margin-top: 25px; 
     border: 1px solid #d2d2d2;
     border-radius: 5px;
-    border-left: 4px solid red;
+    border-left: 4px solid #ff4040;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
@@ -314,6 +315,7 @@ li > a::before
     color: white;
     font-weight: bold; 
     border: 0px;
+    font-size: 0.9em;
 }
 
 figure
@@ -347,7 +349,7 @@ table {
 
 th
 {
-    background-color: #ff0000;
+    background-color: #ff4040;
     color: white;
     font-weight: bold;
     border: 1px solid #bb0202;
@@ -366,7 +368,7 @@ table, td
     border: 1px solid #d2d2d2;
 }
 
-form
+form > p
 {
     display: flex;
     flex-direction: column;
@@ -414,8 +416,8 @@ footer
     color: #808080;
 }
 
-@media (max-width: 1000px)
-{
+@media (max-width: 1130px)
+{ 
     .break-row
     {
         flex-direction: column;
@@ -436,6 +438,59 @@ footer
         margin-right: 0px;
     }
 }
+
+@media (max-width: 650px)
+{
+    header
+    {
+        height: auto;
+    }
+
+    .header-container
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #logo
+    {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    nav
+    {
+        height: 50px;
+    }
+
+    .content-image
+    {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #profile-picture
+    {
+        margin-right: 0px;
+        margin-bottom: 15px;
+    }
+
+    form
+    {
+        width: 100%;
+    }
+
+    #landing-title
+    {
+        font-size: 1.8rem;
+    }
+
+    #landing-description
+    {
+        font-size: 1.4rem;
+    }
+}
+
 
 
 
