@@ -68,13 +68,20 @@
                                 tail current for the comparator is generated in the current mirror comprised of Q9, Q10 and
                                 R4.
                             </p>
+                            <figure>
+                                <img src="./images/Comparatorcurrentmirror.png" alt="Schematic for the comparator, including a current mirror." height=300
+                                    width=>
+                                <figcaption>The BJT-based comparator and current mirror, with input signal Vin and triangle wave input
+                                    Vtri labeled.</figcaption>
+                            </figure>
                             <p>
-                                them is positive and 0 V (ground) when it is negative. This will create the PWM signal. It is important that the audio signal
-                                is bounded within the triangle wave, as clipping will occur if the amplitude of the signal
-                                exceeds that of the carrier wave [3]; if the input is higher in amplitude than the triangle,
-                                the comparator will output a constant logic high in the PWM until the input signal is lowered
-                                beneath the maximum amplitude of the triangle wave. This also happens when the input signal
-                                is lower than the minimum voltage of the triangle wave.
+                                The comparator compares Vin and Vtri and outputs VCC when the difference betweenthem is positive and 0 V (ground) when it
+                                is negative. This will create the PWM signal. It is important that the audio signal is bounded
+                                within the triangle wave, as clipping will occur if the amplitude of the signal exceeds that
+                                of the carrier wave [3]; if the input is higher in amplitude than the triangle, the comparator
+                                will output a constant logic high in the PWM until the input signal is lowered beneath the
+                                maximum amplitude of the triangle wave. This also happens when the input signal is lower
+                                than the minimum voltage of the triangle wave.
                             </p>
                         </section>
                         <section>
@@ -87,7 +94,10 @@
                                 NAND gates together with a feedback, which is the same phase-shifted signal. This shortens
                                 the on-duration of the PWM. The inverted signal is inverted back.
                             </p>
-                            <!-- image -->
+                            <figure>
+                                <img src="./images/dead_time.png" alt="Schematic for the dead time generator." height=150 width=>
+                                <figcaption>The dead time generator based on logic gates.</figcaption>
+                            </figure>
                         </section>
                         <section>
                             <h3 id="level-shifter-mosfet">Level shifter and MOSFET drivers</h3>
@@ -100,13 +110,19 @@
                                 very little current will flow and the voltage drop over R6 will be negligible. The output
                                 voltage will then be equal to VCC, thus inverting the PWM.
                             </p>
-                            <!-- img -->
+                            <figure>
+                                <img src="./images/levelshifter.png" alt="Schematic for the level shifter." height=300 width=>
+                                <figcaption>The dead time generator based on logic gates.</figcaption>
+                            </figure>
                             <p>
                                 The driver (fig. 13) is a push-pull stage consisting of one PNP and one NPN. When the PWM is on the PNP will conduct current
                                 to the output and when the PWM is off the NPN will conduct. The low resistance of the BJTs
                                 will increase the current flow while maintaining the same voltage.
                             </p>
-                            <!-- image -->
+                            <figure>
+                                <img src="./images/driver.png" alt="Schematic for the dead time generator." height=300 width=>
+                                <figcaption>The dead time generator based on logic gates.</figcaption>
+                            </figure>
                         </section>
                         <section>
                             <h3 id="switching-stage">Switching stage</h3>
@@ -114,7 +130,10 @@
                                 In fig. 14 the switching stage is shown. Freewheeling diodes were implemented to avoid current spikes when a MOSFET turns
                                 off due to the inductive load.
                             </p>
-                            <!-- iomg -->
+                            <figure>
+                                <img src="./images/switching.png" alt="Schematic for the two MOSFET switching stage." height=300 width=>
+                                <figcaption>The switching stage consisting of one NMOS and one PMOS transistor.</figcaption>
+                            </figure>
                         </section>
                         <section>
                             <h3 id="low-pass-filter-load">Low-pass filter and load</h3>
@@ -123,7 +142,10 @@
                                 will be slower, making it harder to filter out the triangle wave frequency component. A capacitor
                                 was used in series with Rload to remove any DC component.
                             </p>
-                            <!-- img -->
+                            <figure>
+                                <img src="./images/Filterload.png" alt="Schematic for the output low-pass filter with load." height=150 width=>
+                                <figcaption>The low-pass output filter with load.</figcaption>
+                            </figure>
                         </section>
                     </section>
                     <section>
@@ -182,6 +204,66 @@
                             To achieve a long enough dead time, more inverters than those shown in fig. 11 were used.
                         </p>
                     </section>
+                    <section>
+                        <h2 id="component-list">List of (some) components</h2>
+                        <table style="width:100%">
+                            <tr>
+                                <th>Identifier</th>
+                                <th>Type</th>
+                                <th>Model</th>
+                            </tr>
+                            <tr>
+                                <td>M1</td>
+                                <td>PMOS</td>
+                                <td>IRF9540N</td>
+                            </tr>
+                            <tr>
+                                <td>M2</td>
+                                <td>NMOS</td>
+                                <td>IRF3710</td>
+                            </tr>
+                            <tr>
+                                <td>Q12</td>
+                                <td>NPN</td>
+                                <td>BD241C</td>
+                            </tr>
+                            <tr>
+                                <td>Q13</td>
+                                <td>PNP</td>
+                                <td>BD242C</td>
+                            </tr>
+                            <tr>
+                                <td>Q1, Q2, Q7-Q11</td>
+                                <td>NPN</td>
+                                <td>2N3904</td>
+                            </tr>
+                            <tr>
+                                <td>Q3-Q6</td>
+                                <td>PNP</td>
+                                <td>2N3906</td>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>Voltage regulator</td>
+                                <td>LM338T</td>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>Voltage regulator</td>
+                                <td>LM7905</td>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>Voltage regulator</td>
+                                <td>MC34063</td>
+                            </tr>
+                            <tr>
+                                <td>U1, U2</td>
+                                <td>Op-amp</td>
+                                <td>TLE2081CP</td>
+                            </tr>
+                        </table>
+                    </section>
                 </div>
                 <aside id="content-sidebar">
                     <h3>Contents</h3>
@@ -211,6 +293,9 @@
                         </li>
                         <li>
                             <a href="#final-design" class="content-section">Final design</a>
+                        </li>
+                        <li>
+                            <a href="#component-list" class="content-section">List of (some) components</a>
                         </li>
                     </ul>
                 </aside>

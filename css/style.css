@@ -1,11 +1,93 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Slut på CSS global reset */
+
+h1, h2, h3, h4
+{
+    font-weight: bold;
+    margin-bottom: 15px;
+    margin-top: 25px;
+}
+
+h1
+{
+    font-size: 2rem;
+    
+}
+
+h2
+{
+    font-size: 1.8rem;
+}
+
+h3
+{
+    font-size: 1.2rem;
+}
+
+p
+{
+    font-size: 1rem;
+    line-height: 1.4em;
+    margin-bottom: 15px;
+}
+
 body
 {
     font-family: 'Lato', sans-serif;
-    background-color: white;
+    background-color: #ff0000;
     margin: 0px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    counter-reset: figures; /* för figurnumrering längre ner */
 }
 
 header 
@@ -62,6 +144,8 @@ nav > a:hover:not(.active)
 main
 {
     flex: 1;
+    background-color: white;
+    padding-bottom: 50px;
 }
 
 .landing
@@ -132,11 +216,17 @@ main
 {
     flex-direction: row;
     position: relative;
+    display: flex;
 }
 
 .space-between
 {
     justify-content: space-between;
+}
+
+.margin-right
+{
+    margin-right: 25px;
 }
 
 #content-sidebar
@@ -157,7 +247,7 @@ main
 
 #content-sidebar > h3
 {
-    margin: 0px;
+    margin-top: 0px;
 }
 
 #content-sidebar-list
@@ -166,7 +256,7 @@ main
 }
 
 /* Större mellanrum mellan sakerna i innehållsförteckningen */
-#content-sidebar-list > li li
+#content-sidebar-list li
 {
     margin: 13px 0;
 }
@@ -176,6 +266,13 @@ main
 {
     text-decoration: none;
     color: black;
+}
+
+/* Indentera underrubriker i listan */
+#content-sidebar-list > li > ul, 
+#content-sidebar-list > li > ol
+{
+    margin-left: 25px;
 }
 
 li
@@ -224,13 +321,13 @@ figure
     justify-content: center;
     align-items: center;
     counter-increment: figures; /* Räkna figurnumrering från 1, se nedan */
-    margin-top: 35px;
+    margin-top: 20px;
 }
 
 figcaption
 {
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 20px;
+    margin-bottom: 35px;
     font-style: italic;
 }
 
@@ -240,9 +337,38 @@ figure figcaption:before
 	content: 'Figure ' counter(figures) '. ';
 }
 
+table {
+    margin-top: 25px;
+    border-collapse: collapse;
+}
+
+th
+{
+    background-color: #ff0000;
+    color: white;
+    font-weight: bold;
+}
+
+th,td
+{
+    height: 20px;
+    padding: 5px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+table, th, td
+{
+    border: 1px solid black;
+}
+
+form
+{
+
+}
+
 footer
 {
-    margin-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -252,11 +378,9 @@ footer
     color: #808080;
 }
 
+
+
 /* TODO 
-styla lista (med komponenter?) F2
-figurer?
-grid?
-footer borde fixas
 mer effektiv CSS? få in det som står i matrisen, F4
 F5 7:30???
 F6  slutet, borde ha nåt liknande
