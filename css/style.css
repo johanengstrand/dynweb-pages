@@ -58,24 +58,25 @@ h1, h2, h3, h4
 
 h1
 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     
 }
 
 h2
 {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
 }
 
 h3
 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 p
 {
     font-size: 1rem;
-    line-height: 1.4em;
+    line-height: 1.3em;
+    margin-top: 15px;
     margin-bottom: 15px;
 }
 
@@ -87,7 +88,7 @@ body
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    counter-reset: figures; /* för figurnumrering längre ner */
+    counter-reset: figures; /* för automatisk figurnumrering (längre ner under figure och figcaption) */
 }
 
 header 
@@ -100,7 +101,7 @@ header
 #logo
 {
     color: white;
-    font-size: 1.5em;
+    font-size: 1.3em;
     text-decoration: none;
     font-weight: bold;
 }
@@ -109,13 +110,12 @@ nav
 {
     height: 100%;
     display: flex;
-
 }
 
 nav > a
 {
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: 1em;
     color: white;
     height: 100%;
     display: flex;
@@ -148,14 +148,6 @@ main
     padding-bottom: 50px;
 }
 
-.landing
-{
-    height: 350px;
-    flex-direction: column;  
-    align-items: center; 
-    justify-content: center;
-}
-
 #landing-title
 {
     font-size: 50px;
@@ -183,7 +175,6 @@ main
     padding: 10px 25px;
     display: flex;
     flex-direction: column;
-  
 }
 
 .header-container
@@ -200,16 +191,26 @@ main
     background-color: #2a2e42;
     color: white;
     display: flex;
-    padding: 7px 25px;
+    padding: 0px 25px;
     align-items: center;
+    height: 70px;
+    justify-content: center;
 }
 
 .top-area-title
 {
     margin: 0px;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: normal;
     align-self: center;
+}
+
+.landing
+{
+    height: 350px;
+    flex-direction: column;  
+    align-items: center; 
+    justify-content: center;
 }
 
 .row
@@ -312,6 +313,7 @@ li > a::before
     text-decoration: none;
     color: white;
     font-weight: bold; 
+    border: 0px;
 }
 
 figure
@@ -321,13 +323,13 @@ figure
     justify-content: center;
     align-items: center;
     counter-increment: figures; /* Räkna figurnumrering från 1, se nedan */
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 figcaption
 {
     margin-top: 20px;
-    margin-bottom: 35px;
+    margin-bottom: 20px;
     font-style: italic;
 }
 
@@ -340,6 +342,7 @@ figure figcaption:before
 table {
     margin-top: 25px;
     border-collapse: collapse;
+    background-color: rgba(0, 0, 0, 0.03);  
 }
 
 th
@@ -347,24 +350,57 @@ th
     background-color: #ff0000;
     color: white;
     font-weight: bold;
+    border: 1px solid #bb0202;
 }
 
 th,td
 {
     height: 20px;
-    padding: 5px;
+    padding: 5px 10px;
     text-align: left;
     vertical-align: middle;
 }
 
-table, th, td
+table, td
 {
-    border: 1px solid black;
+    border: 1px solid #d2d2d2;
 }
 
 form
 {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 100%;
+    font-size: 1rem;
+}
 
+input, textarea {
+    border: 0px solid #808080;
+    background-color: #f3f3f3;
+    border-radius: 4px;
+    padding: 15px 15px;
+    margin-bottom: 20px; 
+    font-size: inherit;
+}
+
+textarea
+{
+    resize: none;
+    height: 150px;
+    font-family: inherit;
+}
+
+#profile-picture
+{
+    margin-top: 25px;
+    margin-right: 100px;
+    margin-bottom: 50px;
+}
+
+#btn-submit
+{
+    align-self: flex-start;
 }
 
 footer
@@ -374,8 +410,31 @@ footer
     justify-content: center;
     align-items: center;
     background-color: #ececec; 
-    padding: 10px 0px;
+
     color: #808080;
+}
+
+@media (max-width: 1000px)
+{
+    .break-row
+    {
+        flex-direction: column;
+    }
+
+    #content-sidebar
+    {
+        order: -1;
+        position: relative;
+        top: 0px;
+        width: calc(100% - 52px);
+        padding: 25px 25px;
+        height: auto;
+    }
+
+    #design-text
+    {
+        margin-right: 0px;
+    }
 }
 
 
